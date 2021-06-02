@@ -30,7 +30,7 @@ pipeline  {
         url:'git@github.com:rmatin20/package-class-new.git',
 
         credentialsId: 'package',
-        branch: "master"
+        branch: "main"
         )
      }
 
