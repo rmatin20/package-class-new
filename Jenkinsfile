@@ -80,6 +80,32 @@ pipeline  {
 
     } 
 
+ stage('Rename Artifacts - to remove timestamp') 
+    {
+      steps {
+        echo "Starting --- Rename Artifacts - to remove timestamp "
+        sh 'pwd'
+        script {
+
+             def newBuildId = "$this_artifact" + ".war";
+             echo "newBuildId is $newBuildId"
+
+             sh "cp $this_full_build_id $newBuildId"
+             echo "Done copying the build to new name"
+
+
+             echo "Updating this_full_build_id to reflect new short build name"
+             this_full_build_id = newBuildId;
+
+             echo "this_full_build_id is $this_full_build_id"
+
+             echo "*** List new build ID";
+             sh 'ls -l'
+             echo "Completed --- Rename Artifacts - to remove timestamp "
+        }
+
+      }  
+    } 
 
 
     stage('Create app image')
