@@ -23,7 +23,7 @@
             "Tool" : "Packer",
             "Name" : "{{user `artifactId`}}-{{user `jenkinsBuildId`}}",
             "build_id" : "{{user `artifactId`}}-{{user `jenkinsBuildId`}}",
-            "Author" : "ochoa"
+            "Author" : "rmatin"
         }
       }
   ],
